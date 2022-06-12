@@ -1,37 +1,41 @@
 import unittest
 
-
 from selenium import webdriver
 import time
 
+from selenium.webdriver.common.by import By
+
 try:
-    link= "http://suninjuly.github.io/registration1.html"
+    link = "http://suninjuly.github.io/registration2.html"
 
     browser = webdriver.Chrome()
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    input1 = browser.find_element_by_xpath('//div[1]/div[1]/input')
+
+    input1 = browser.find_element(by=By.XPATH, value='//div[1]/div[1]/input')
     input1.send_keys("Ivan")
-    input2 = browser.find_element_by_css_selector('div.first_block > div.form-group.second_class > input')
+    input2 = browser.find_element(by=By.CSS_SELECTOR, value='div.first_block > div.form-group.second_class > input')
     input2.send_keys("Petrov")
-    input3 = browser.find_element_by_class_name('third')
+    input3 = browser.find_element(by=By.CLASS_NAME, value='third')
     input3.send_keys("348@mail.ru")
     # Отправляем заполненную форму
-    button = browser.find_element_by_class_name('btn')
+    button = browser.find_element(by=By.CLASS_NAME, value='btn')
     button.click()
     # находим элемент, содержащий текст
-    welcome_text_elt = browser.find_element_by_tag_name("h1")
+    welcome_text_elt = browser.find_element(by=By.TAG_NAME, value="h1")
     # записываем в переменную welcome_text текст из элемента welcome_text_elt
     welcome_text = welcome_text_elt.text
 
 
     class Test1(unittest.TestCase):
         def test_2(self):
-            self.assertEqual("Congratulations! You have successfully registered!", welcome_text, "Should be 'Congratulations! You have successfully registered!'")
+            self.assertEqual("Congratulations! You have successfully registered!", welcome_text,
+                             "Should be 'Congratulations! You have successfully registered!'")
+
+
     # def test_2(self):
     #   self.assertEqual(abs(-42), -42, "Should be absolute value of a number")
-
 
     if __name__ == "__main__":
         unittest.main()
@@ -40,6 +44,6 @@ try:
 
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
-    time.sleep(10)
+    time.sleep(1)
     # закрываем браузер после всех манипуляций
     browser.quit()
