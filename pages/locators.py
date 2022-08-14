@@ -6,12 +6,20 @@ class MainPageLocators():
 
 
 class LoginPageLocators():
-    pass
+    LOGIN_USERNAME = (By.CSS_SELECTOR, "#id_login-username")
+    LOGIN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
+    REGISTRATION_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTRATION_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_PASSWORD_REPEAT = (By.CSS_SELECTOR, "#id_registration-password2")
 
 
 class ProductPageLocators():
-    ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, "btn-add-to-basket")
+    BUTTON_ADD_TO_BASKET = (By.CLASS_NAME, "btn-add-to-basket")
     ADD_TO_BASKET_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
+    PRODUCT_NAME = (By.CSS_SELECTOR, "div.product_main h1")
+    MESSAGE_BASKET_TOTAL = (By.CSS_SELECTOR, "div.alert-info")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, "p.price_color")
+
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
