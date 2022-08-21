@@ -29,4 +29,4 @@ class BasePageLocators():
 
 class BasketPageLocators():
     EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p")
-    BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner")
+    GOODS_IN_BASKET = (By.CSS_SELECTOR, ".hidden-xs")
