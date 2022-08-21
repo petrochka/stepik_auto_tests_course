@@ -24,7 +24,7 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-    OPEN_THE_BASKET = (By.CSS_SELECTOR, "span > a")
+    GO_T0_BASKET = (By.CSS_SELECTOR, "span > a")
 
 
 class BasketPageLocators():
