@@ -30,4 +30,7 @@ def test_guest_should_see_correct_in_message(browser, lesson_number):
     button = browser.find_element(By.CLASS_NAME, "submit-submission")
     button.click()
     message = browser.find_element(By.CLASS_NAME, "smart-hints")
-    assert "Correct!" in message.text, print("message.text")
+    assert "Correct!" in message.text, f'Need "Correct!", got "{message}"'
+
+
+    
