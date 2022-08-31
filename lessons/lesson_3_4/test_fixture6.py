@@ -9,7 +9,7 @@ def prepare_faces():
     print(":3", "\n")
 
 
-@pytest.fixture()
+@pytest.fixture
 def very_important_fixture():
     print(":)", "\n")
 
@@ -19,7 +19,7 @@ def print_smiling_faces():
     print(":-Р", "\n")
 
 
-class TestPrintSmilingFaces():
+class TestPrintSmilingFaces:
     def test_first_smiling_faces(self, prepare_faces, very_important_fixture):
         pass
         # какие-то проверки
@@ -44,8 +44,8 @@ class TestPrintSmilingFaces():
         #     yield
         #     print(":3", "\n")  # эта часть выполниться только после прогона всех тестов
         #
-        # @pytest.fixture()
-        # def very_important_fixture():
+        # @pytest.fixture
+        # def very_important_fixture:
         #     print(":)", "\n")
         #
         # @pytest.fixture(autouse=True)
@@ -55,7 +55,7 @@ class TestPrintSmilingFaces():
         # def print_smiling_faces():
         #     print(":-Р", "\n")
         #
-        # class TestPrintSmilingFaces():
+        # class TestPrintSmilingFaces:
         #     def test_first_smiling_faces(self, prepare_faces, very_important_fixture):
         #         # вызываем фикстуру prepare_faces в тесте, передав ее как параметр (выполнится сначала "^_^", а потом после окончания второго теста ":3")
         #         # вызываем фикстуру very_important_fixtureв тесте, передав ее как параметр

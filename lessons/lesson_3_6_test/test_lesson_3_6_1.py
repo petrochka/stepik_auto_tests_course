@@ -6,7 +6,7 @@ import math
 import time
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture
 def browser():
     print("\nstart browser for test..")
     browser = webdriver.Chrome()

@@ -1,6 +1,6 @@
 import pytest
-from selenium import webdriver
 
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
@@ -8,7 +8,7 @@ def pytest_addoption(parser):
     parser.addoption('--language')
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture
 def browser(request):
     user_language = request.config.getoption("language")
     options = Options()
@@ -18,7 +18,3 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
-
-
-
-
