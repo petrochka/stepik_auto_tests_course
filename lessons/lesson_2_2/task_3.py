@@ -1,18 +1,18 @@
-from selenium import webdriver
+import os
 import time
 
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 link = "http://suninjuly.github.io/file_input.html"
 browser = webdriver.Chrome()
 browser.get(link)
-input1 = browser.find_element(By.NAME, value='firstname').send_keys('Lina')
-
-input2 = browser.find_element(By.NAME, value='lastname').send_keys('Vasko')
-
-input3 = browser.find_element(By.NAME, value='email').send_keys('linavasko11@mail.ru')
-
-import os
+name = browser.find_element(By.NAME, value='firstname')
+name.send_keys('Lina')
+lastname = browser.find_element(By.NAME, value='lastname')
+lastname.send_keys('Vasko')
+email = browser.find_element(By.NAME, value='email')
+email.send_keys('linavasko11@mail.ru')
 
 current_dir = os.path.abspath(os.path.dirname(__file__))  # получаем путь к директории текущего исполняемого файла
 file_path = os.path.join(current_dir, '../venv/txt.txt')  # добавляем к этому пути имя файла

@@ -1,5 +1,6 @@
-from selenium import webdriver
 import time
+
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 link = "http://suninjuly.github.io/get_attribute.html"

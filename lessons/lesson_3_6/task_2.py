@@ -1,9 +1,9 @@
-
+import math
 import pytest
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import math
-import time
 
 
 @pytest.fixture
@@ -31,6 +31,3 @@ def test_guest_should_see_correct_in_message(browser, lesson_number):
     button.click()
     message = browser.find_element(By.CLASS_NAME, "smart-hints")
     assert "Correct!" in message.text, f'Need "Correct!", got "{message}"'
-
-
-    
